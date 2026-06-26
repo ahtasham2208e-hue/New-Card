@@ -257,10 +257,10 @@
     }
 
     .page-rose-fall {
-      position: fixed;
+      position: absolute;
       inset: 0;
       pointer-events: none;
-      z-index: 5;
+      z-index: 0;
       overflow: hidden;
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -675,15 +675,18 @@
 
     @media (max-width: 860px) {
       .card {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        min-height: 480px;
       }
 
       .card-wrapper {
-        width: min(95vw, 720px);
+        width: min(98vw, 720px);
+        padding: 14px;
       }
 
       .card-side {
-        padding: 28px;
+        padding: 24px 18px;
+        min-height: 0;
       }
 
       .card-side.left,
@@ -692,11 +695,12 @@
       }
 
       .image-hero {
-        width: min(320px, 100%);
+        width: min(260px, 100%);
+        margin: 0 auto;
       }
 
       .card-cover {
-        padding: 30px;
+        padding: 24px 22px;
       }
 
       .cover-content {
@@ -704,20 +708,26 @@
       }
 
       .cover-content h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .card-side.right h1 {
-        font-size: clamp(1.9rem, 4vw, 2.6rem);
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
       }
 
       .subtitle {
-        font-size: 0.98rem;
+        font-size: 0.95rem;
+        padding: 14px 16px;
+        max-width: 100%;
       }
 
       .message {
-        font-size: 1rem;
-        line-height: 1.75;
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+
+      .heart-sparkle {
+        padding: 14px 18px;
       }
 
       .flower-decor,
@@ -728,43 +738,71 @@
 
     @media (max-width: 520px) {
       .card-wrapper {
-        padding: 14px;
+        width: calc(100vw - 12px);
+        padding: 10px;
       }
 
       .card {
         border-radius: 24px;
+        min-height: 420px;
       }
 
       .card-side {
-        padding: 22px;
+        padding: 18px 12px;
       }
 
       .image-hero {
-        width: min(280px, 100%);
+        width: min(220px, 100%);
       }
 
       .card-cover {
-        padding: 22px;
+        padding: 18px 16px;
       }
 
       .cover-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
+      }
+
+      .cover-content p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+      }
+
+      .card-side.right h1 {
+        font-size: 1.9rem;
       }
 
       .subtitle {
-        font-size: 0.93rem;
+        font-size: 0.9rem;
+        max-width: 100%;
+        padding: 12px 14px;
       }
 
       .message {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
+        line-height: 1.6;
       }
 
-      .card-side.right {
-        gap: 18px;
+      .heart-sparkle {
+        padding: 12px 14px;
+        font-size: 0.96rem;
+      }
+
+      .heart-sparkle span {
+        font-size: 1.1rem;
+      }
+
+      .card-cover {
+        min-height: 200px;
       }
 
       .page-rose-fall .rose {
-        font-size: 1.35rem;
+        font-size: 1.1rem;
+      }
+
+      .flower-decor,
+      .page-side-roses {
+        display: none;
       }
     }
 
@@ -829,16 +867,16 @@
         <div class="cover-heart">💘</div>
       </div>
     </div>
-  </div>
-  <div class="page-rose-fall" id="pageRoseFall">
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
-    <span class="rose">🌹</span>
+    <div class="page-rose-fall" id="pageRoseFall">
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+      <span class="rose">🌹</span>
+    </div>
   </div>
 
   <script>
